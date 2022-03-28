@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo_transparent.png";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
@@ -28,7 +28,7 @@ export default function Header() {
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/carts/5")
+      .get("https://evoc-db.herokuapp.com/carts/3")
       .then((cart) => setCartDetails(cart.data));
   }, [setCartDetails]);
 
@@ -44,7 +44,7 @@ export default function Header() {
   };
 
   return (
-    <Fragment>
+    <header>
       <div className="header">
         <div className="header-first-row">
           <div className="app-brand">
@@ -82,6 +82,6 @@ export default function Header() {
           <div className="right-header"></div>
         </div>
       </div>
-    </Fragment>
+    </header>
   );
 }

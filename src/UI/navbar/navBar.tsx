@@ -8,27 +8,27 @@ export default function NavBar() {
         <nav className="nav-bar-nav hide-mobile">
           <ul>
             <li className="navigation-item">
-              <a href="#" className="navigation-link">
+              <a href="#nav1" className="navigation-link">
                 Link
               </a>
             </li>
             <li className="navigation-item">
-              <a href="#" className="navigation-link">
+              <a href="#nav2" className="navigation-link">
                 Link
               </a>
             </li>
             <li className="navigation-item">
-              <a href="#" className="navigation-link">
+              <a href="#nav3" className="navigation-link">
                 Link
               </a>
             </li>
             <li className="navigation-item">
-              <a href="#" className="navigation-link">
+              <a href="#nav4" className="navigation-link">
                 Account
               </a>
             </li>
             <li className="navigation-item">
-              <a href="#" className="navigation-link">
+              <a href="#nav5" className="navigation-link">
                 Help?
               </a>
             </li>

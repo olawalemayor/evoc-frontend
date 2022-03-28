@@ -7,8 +7,10 @@ import PageSlider from "../common/slider";
 import { ImageProps } from "../common/slider";
 import CategoryBar from "../components/categoryBar";
 import HeroGrids from "../components/heroSlides";
+import HomeSidebar from "../components/homeSidebar";
 import MobileHeroGrid from "../components/mobileGrid";
 import GridContext from "../context/gridContext";
+import { Product } from "../models/product";
 
 export default function Home() {
   const images: ImageProps[] = [
@@ -17,26 +19,14 @@ export default function Home() {
     { id: 3, title: "", url: thirdSlide, text: "" },
   ];
 
-  class Product {
-    id = 0;
-    title = "";
-    price = 0;
-    description = "";
-    category = "";
-    image = "";
-    rating = {
-      rate: 0,
-      count: 0,
-    };
-  }
-
   const [categories, setCategories] = useState([""]);
   const [products, setProducts] = useState([new Product()]);
   const [trendingProducts, setTrendingProducts] = useState([new Product()]);
+  const endpoint = "https://evoc-db.herokuapp.com/";
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/products")
+      .get(endpoint + "products")
       .then((product) => setProducts(product.data))
       .catch((e) => {
         console.log("Eror: ", e.message);
@@ -45,7 +35,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get<string[]>("https://fakestoreapi.com/products/categories")
+      .get<string[]>(endpoint + "categories")
       .then(({ data }) => setCategories(data));
   }, [setCategories]);
 
@@ -103,38 +93,46 @@ export default function Home() {
 
       {/* Body */}
       {categories && (
-        <div className="sections-container">
-          {categories.map((category) => (
-            <Fragment key={category}>
-              <GridContext.Provider
-                value={{
-                  gridClass: "",
-                  gridWidth: 100,
-                  sectionTitle: category.toUpperCase(),
-                  singleBoxHeight: 150,
-                  singleBoxWidth: 100,
-                  visibleProducts: 5,
-                  category: category,
-                }}
-              >
-                <HeroGrids products={getCategorizedProducts(category)} />
-              </GridContext.Provider>
+        <div className="main-container">
+          <div className="sections-container">
+            {categories.map((category) => (
+              <Fragment key={category}>
+                <GridContext.Provider
+                  value={{
+                    gridClass: "",
+                    gridWidth: 100,
+                    sectionTitle: category.toUpperCase(),
+                    singleBoxHeight: 140,
+                    singleBoxWidth: 100,
+                    visibleProducts: 3,
+                    category: category,
+                  }}
+                >
+                  <HeroGrids products={getCategorizedProducts(category)} />
+                </GridContext.Provider>
 
-              <GridContext.Provider
-                value={{
-                  gridClass: "",
-                  gridWidth: 100,
-                  sectionTitle: category.toUpperCase(),
-                  singleBoxHeight: 250,
-                  singleBoxWidth: 100,
-                  visibleProducts: 2,
-                  category: category,
-                }}
-              >
-                <MobileHeroGrid products={getCategorizedProducts(category)} />
-              </GridContext.Provider>
-            </Fragment>
-          ))}
+                <GridContext.Provider
+                  value={{
+                    gridClass: "",
+                    gridWidth: 100,
+                    sectionTitle: category.toUpperCase(),
+                    singleBoxHeight: 250,
+                    singleBoxWidth: 100,
+                    visibleProducts: 2,
+                    category: category,
+                  }}
+                >
+                  <MobileHeroGrid products={getCategorizedProducts(category)} />
+                </GridContext.Provider>
+              </Fragment>
+            ))}
+          </div>
+
+          <div className="hide-mobile sidebar-container">
+            <HomeSidebar />
+
+            <HomeSidebar />
+          </div>
         </div>
       )}
     </div>

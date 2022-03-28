@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
 export default function TopBar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn] = useState(true);
 
   return (
     <Fragment>
@@ -9,32 +9,32 @@ export default function TopBar() {
         <div>
           <nav className="topbar-nav">
             <li>
-              <a href="#">Refunds</a>
+              <a href="#top1">Refunds</a>
             </li>
             <li>
-              <a href="#">Privacy & Policy</a>
+              <a href="#top2">Privacy & Policy</a>
             </li>
             <li>
-              <a href="#">Fees</a>
+              <a href="#top3">Fees</a>
             </li>
             <li>
-              <a href="#">FAQ</a>
+              <a href="#top4">FAQ</a>
             </li>
           </nav>
         </div>
         {!isLoggedIn && (
           <div className="topbar-nav">
             <li>
-              <a href="#">Login</a>
+              <a href="#top5">Login</a>
             </li>
             <li>
-              <a href="#">Signup</a>
+              <a href="#top6">Signup</a>
             </li>
           </div>
         )}
         {isLoggedIn && (
           <div className="topbar-logged-greeting">
-            Hello, <a href="#">username</a>
+            Hello, <a href="#top7">username</a>
           </div>
         )}
       </div>

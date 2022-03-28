@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductModel {
   id: number;
   title: string;
   price: number;
@@ -12,5 +12,18 @@ export interface Product {
 }
 
 export interface ProductSlideProps {
-  products: Product[];
+  products: ProductModel[];
+}
+
+export class Product {
+  id = 0;
+  title = "";
+  price = 0;
+  description = "";
+  category = "";
+  image = "";
+  rating = {
+    rate: 0,
+    count: 0,
+  };
 }

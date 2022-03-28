@@ -1,0 +1,86 @@
+footer {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-row {
+  padding-top: 1rem;
+  margin: 0 auto;
+}
+
+.footer-column {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: var(--textColor1);
+}
+
+.footer-header {
+  color: var(--primaryColor);
+  font-size: var(--heading4);
+  font-weight: bolder;
+}
+
+.footer-link {
+  padding: 0.3rem 0;
+}
+
+.footer-link a {
+  text-decoration: none;
+  color: var(--textColor1);
+}
+
+.footer-link a:hover {
+  font-weight: bolder;
+}
+
+.line-bottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.footer .brand-info img {
+  height: 150px;
+  width: 100%;
+}
+
+.footer-flex a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--textColor1);
+}
+
+.footer-flex a:hover {
+  font-weight: bolder;
+}
+
+.footer-socials {
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  width: 70%;
+}
+
+@media (min-width: 1200px) {
+  .footer-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-column {
+    width: 25%;
+  }
+
+  .footer-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-socials {
+    margin: 0 auto;
+    width: unset;
+  }
+}

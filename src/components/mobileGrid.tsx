@@ -6,7 +6,7 @@ import GridContext from "../context/gridContext";
 export default function MobileHeroGrid({ products }: ProductSlideProps) {
   return (
     <>
-      {products[0].id > 0 && (
+      {products && (
         <GridContext.Consumer>
           {({ sectionTitle }) => (
             <div className="mobile-grid hide-desktop hero-grids">

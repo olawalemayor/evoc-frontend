@@ -3,6 +3,7 @@ import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "./productSlide.css";
 import GridContext from "../context/gridContext";
 import { ProductSlideProps } from "../models/product";
+import { NavLink } from "react-router-dom";
 
 export default function MobileHeroSlide({ products }: ProductSlideProps) {
   return (
@@ -24,7 +25,9 @@ export default function MobileHeroSlide({ products }: ProductSlideProps) {
                     <img src={image} alt={title} />
                   </div>
                   <span>{category.toUpperCase()}</span>
-                  <h4 className="product-title">{title}</h4>
+                  <NavLink to={"product/" + id}>
+                    <h4 className="product-title">{title}</h4>
+                  </NavLink>
                   <div className="slide-action">
                     <div className="price">${price}</div>
                     <button className="add-cart-btn">Add to Cart</button>

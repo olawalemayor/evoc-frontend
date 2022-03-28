@@ -1,10 +1,14 @@
 import React from "react";
 import "./productSlide.css";
-import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 
+//import carousel
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
+
+//others
 import { ProductSlideProps } from "../models/product";
 import GridContext from "../context/gridContext";
+import { NavLink } from "react-router-dom";
 
 export default function ProductSlide({ products }: ProductSlideProps) {
   return (
@@ -26,7 +30,9 @@ export default function ProductSlide({ products }: ProductSlideProps) {
                     <img src={image} alt={title} />
                   </div>
                   <span>{category.toUpperCase()}</span>
-                  <h4 className="product-title">{title}</h4>
+                  <NavLink to={"product/" + id}>
+                    <h4 className="product-title">{title}</h4>
+                  </NavLink>
                   <div className="slide-action">
                     <div className="price">${price}</div>
                     <button className="add-cart-btn">Add to Cart</button>

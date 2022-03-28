@@ -5,6 +5,7 @@ import Header from "./UI/header/header";
 import TopBar from "./UI/topBar/topBar";
 import NavBar from "./UI/navbar/navBar";
 import Routing from "./UI/routing";
+import Footer from "./UI/footer/footer";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <NavBar />
       </div>
       <Routing />
+      <div className="app-footer">
+        <Footer />
+      </div>
     </div>
   );
 }

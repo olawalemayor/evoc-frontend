@@ -24,11 +24,14 @@
 }
 
 .category-item {
+  display: block;
   padding: 1rem;
   border-right: 4px solid var(--primaryColor);
   margin-bottom: 0.1rem;
   border-bottom: 1px solid #aaa;
   cursor: pointer;
+  text-decoration: none;
+  color: var(--textColor1);
 }
 
 .category-item:hover {
@@ -64,8 +67,26 @@
 .section-title {
   color: var(--textColor2);
   background-color: var(--backgroundColor2);
-  border: 1px solid #000;
   margin-bottom: 0;
+}
+
+.desktop-grid .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title h3 {
+  margin: 0;
+}
+
+.desktop-grid .section-title a {
+  text-decoration: none;
+  color: var(--textColor2);
+}
+
+.mobile-grid .section-title {
+  text-align: center;
 }
 
 .hero-product-slide {
@@ -77,9 +98,45 @@
   position: relative;
 }
 
-.sections-container {
-  background-color: #eee;
+.main-container {
+  background-color: rgb(245, 250, 253);
   padding: 1rem 0;
+}
+
+.sidebar-container {
+  width: 30%;
+}
+
+/*Category page styling*/
+.category-section {
+  margin: 1.5rem auto;
+  width: 95%;
+}
+
+.filter-box {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: var(--textColor2);
+  background-color: var(--secondaryColor);
+}
+
+.category-block {
+  text-align: center;
+  box-shadow: 0 0 5px 2px #eee;
+}
+
+.category-block:hover {
+  background-color: #ccc;
+}
+
+.category-block .product-image img {
+  width: auto;
+  height: 200px;
+}
+
+.grid-box a {
+  text-decoration: none;
+  color: unset;
 }
 
 @media (min-width: 1200px) {
@@ -111,7 +168,54 @@
     border: unset;
     background-color: var(--textColor1);
   }
+
+  .main-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 3.5rem 2.5rem 0 2.5rem;
+  }
+
   .sections-container {
-    padding: 2.5rem 2.5rem 0 2.5rem;
+    width: 70%;
+  }
+
+  .home-more-btn:hover {
+    color: var(--secondaryColor) !important;
+  }
+
+  /*Category page*/
+
+  .category-section {
+    display: flex;
+    width: 80%;
+  }
+
+  .filter-box {
+    width: 35%;
+    height: max-content;
+  }
+
+  .category-block {
+    display: flex;
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: unset;
+  }
+
+  .category-block .product-image {
+    width: 35%;
+    text-align: center;
+  }
+
+  .category-block .product-details {
+    width: 65%;
+  }
+
+  .category-block .product-details .product-description {
+    height: 2.8rem;
+    overflow: hidden;
   }
 }

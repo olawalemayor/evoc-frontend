@@ -22,7 +22,7 @@ export default function Home() {
   const [categories, setCategories] = useState([""]);
   const [products, setProducts] = useState([new Product()]);
   const [trendingProducts, setTrendingProducts] = useState([new Product()]);
-  const endpoint = "https://evoc-db.herokuapp.com/";
+  const endpoint = "https://fakestoreapi.com/";
 
   useEffect(() => {
     axios
@@ -35,7 +35,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get<string[]>(endpoint + "categories")
+      .get<string[]>(endpoint + "products/categories")
       .then(({ data }) => setCategories(data));
   }, [setCategories]);
 
@@ -102,7 +102,7 @@ export default function Home() {
                     gridClass: "",
                     gridWidth: 100,
                     sectionTitle: category.toUpperCase(),
-                    singleBoxHeight: 140,
+                    singleBoxHeight: 150,
                     singleBoxWidth: 100,
                     visibleProducts: 3,
                     category: category,

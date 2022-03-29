@@ -12,7 +12,7 @@ export default function CategoryPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/product/category/${category}`)
+      .get(`https://fakestoreapi.com/products/category/${category}`)
       .then((product) => setProducts(product.data));
   }, [setProducts, category]);
 

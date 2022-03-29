@@ -13,7 +13,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     axios
-      .get(`https://evoc-db.herokuapp.com/products/${id}`)
+      .get(`https://fakestoreapi.com/products/${id}`)
       .then(({ data }) => setProduct(data));
   }, [setProduct, id]);
 

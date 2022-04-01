@@ -77,10 +77,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="header-second-row">
-          <div className="left-header"></div>
-          <div className="right-header"></div>
-        </div>
       </div>
     </header>
   );

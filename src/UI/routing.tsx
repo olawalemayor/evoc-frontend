@@ -7,14 +7,12 @@ import CategoryPage from "../pages/category";
 
 export default function Routing() {
   return (
-    <div>
-      <main>
-        <Routes>
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/category/:category" element={<CategoryPage />} />
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </main>
-    </div>
+    <main>
+      <Routes>
+        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/category/:category" element={<CategoryPage />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </main>
   );
 }

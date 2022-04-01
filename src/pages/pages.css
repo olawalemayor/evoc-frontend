@@ -101,6 +101,7 @@
 .main-container {
   background-color: rgb(245, 250, 253);
   padding: 1rem 0;
+  display: flex;
 }
 
 .sidebar-container {
@@ -139,6 +140,10 @@
   color: unset;
 }
 
+.sections-container {
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   /*Hero section of home page*/
   .slider-wrapper {
@@ -170,7 +175,6 @@
   }
 
   .main-container {
-    display: flex;
     justify-content: flex-start;
     padding: 3.5rem 2.5rem 0 2.5rem;
   }

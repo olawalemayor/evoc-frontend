@@ -1,11 +1,7 @@
 import React from "react";
 import "./App.css";
+import { TopBar, Header, NavBar, Routing, Footer } from "./UI";
 import "./UI/ui.css";
-import Header from "./UI/header/header";
-import TopBar from "./UI/topBar/topBar";
-import NavBar from "./UI/navbar/navBar";
-import Routing from "./UI/routing";
-import Footer from "./UI/footer/footer";
 
 function App() {
   return (

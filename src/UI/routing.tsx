@@ -1,9 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../pages/home";
+import { ProductPage, CategoryPage, Home } from "../pages";
 import "../pages/pages.css";
-import ProductPage from "../pages/product";
-import CategoryPage from "../pages/category";
 
 export default function Routing() {
   return (

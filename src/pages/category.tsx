@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../models/product";
 import axios from "axios";
-import FilterBox from "../components/filterBox";
-import CategoryGrid from "../components/categoryGrid";
+import { FilterBox, CategoryGrid } from "../components";
 
 export default function CategoryPage() {
   const category = useParams().category;

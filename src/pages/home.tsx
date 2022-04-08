@@ -3,12 +3,14 @@ import React, { Fragment, useEffect, useState } from "react";
 import firstSlide from "../assets/pictures/pexels-andrea-piacquadio-3769747.jpg";
 import secondSlide from "../assets/pictures/pexels-andrea-piacquadio-919436.jpg";
 import thirdSlide from "../assets/pictures/pexels-karolina-grabowska-5632371.jpg";
-import PageSlider from "../common/slider";
+import { PageSlider } from "../common";
 import { ImageProps } from "../common/slider";
-import CategoryBar from "../components/categoryBar";
-import HeroGrids from "../components/heroSlides";
-import HomeSidebar from "../components/homeSidebar";
-import MobileHeroGrid from "../components/mobileGrid";
+import {
+  CategoryBar,
+  MobileHeroGrid,
+  HomeSidebar,
+  HeroSlides as HeroGrids,
+} from "../components";
 import GridContext from "../context/gridContext";
 import { Product } from "../models/product";
 
